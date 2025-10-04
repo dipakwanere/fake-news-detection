@@ -9,7 +9,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from src.predict import predict_texts
-from src.train import train_model  # <-- import your training function
+from src.train import train_models  # <-- import your training function
 
 ## Need to work on
 # MODEL_PATH = "models/best_model.pkl"
