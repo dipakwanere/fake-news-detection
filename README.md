@@ -26,16 +26,18 @@
 
 ## Current Status
 
-✅ **Completed:**
-- ✅ **Data Preparation & Validation** - Raw datasets processed and cleaned
-- ✅ **Feature Engineering Pipeline** - TF-IDF vectorization with 5000 features
-- ✅ **Model Training & Selection** - Random Forest achieved 99.67% accuracy
-- ✅ **Model Evaluation & Metrics** - Comprehensive performance analysis completed
-- ✅ **FastAPI Application** - Modern web interface with beautiful UI
-- ✅ **Template Separation** - Clean code structure with HTML templates
-- ✅ **API Endpoints** - Functional GET /, POST /predict, and JSON API
+ **Completed:**
+-  **Data Preparation & Validation** - Raw datasets processed and cleaned
+-  **Feature Engineering Pipeline** - TF-IDF vectorization with 5000 features
+-  **Model Training & Selection** - Random Forest achieved 99.67% accuracy
+-  **Model Evaluation & Metrics** - Comprehensive performance analysis completed
+-  **FastAPI Application** - Modern web interface with beautiful UI
+-  **Template Separation** - Clean code structure with HTML templates
+-  **API Endpoints** - Functional GET /, POST /predict, and JSON API
+-  **API Endpoints** - Functional GET /, POST /predict, and JSON API
+-  **API Endpoints** - Functional GET /, POST /predict, and JSON API
 
-🚧 **In Progress:**
+ **In Progress:**
 - Unit testing suite execution
 - Enhanced application testing
 
@@ -54,16 +56,16 @@
 - [x] **Model Training** - ✅ 4 models trained (Random Forest selected as best)
 - [x] **Model Evaluation** - ✅ 99.67% accuracy achieved with comprehensive metrics
 
-### Phase 2: API & Integration ✅ COMPLETED
-- [x] **FastAPI Application** - ✅ Modern web interface with gradient design
-- [x] **Template update** - ✅ Clean HTML templates in app/frontend/
-- [x] **API Testing** - ✅ All endpoints functional (GET /, POST /predict, JSON API)
-- [x] **Local Environment** - ✅ Running successfully on localhost:3000
-- [ ] **Unit Testing** - Execute comprehensive test suite with pytest
+### Phase 2: API & Integration  COMPLETED
+- [x] **FastAPI Application** -  Modern web interface with gradient design
+- [x] **Template update** -  Clean HTML templates in app/frontend/
+- [x] **API Testing** -  All endpoints functional (GET /, POST /predict, JSON API)
+- [x] **Local Environment** -  Running successfully on localhost:3000
+- [x] **Unit Testing** - Execute comprehensive test suite with pytest
 
 ### Phase 3: Deployment & Production
 - [ ] **Docker Container** - Build and test containerized application
-- [ ] **CI/CD Pipeline** - Validate GitHub Actions workflow
+- [x] **CI/CD Pipeline** - Validate GitHub Actions workflow
 - [ ] **Production Deployment** - Deploy to cloud provider (Render)
 - [ ] **Documentation** - Final cleanup and documentation updates
 
@@ -110,17 +112,20 @@ fake-news-detection/
 │       ├── processed_data.csv      # Final processed dataset
 │       └── pre_processed_data.csv  # Intermediate preprocessing
 │
-├── notebooks/              # EDA and experiments
-│   └── eda_fake_news_detection.ipynb
+├── notebooks/              # Initial EDA and experiments
+├── notebooks1/             # Additional EDA and model training notebooks
+│   ├── eda_fake_news_detection.ipynb
+│   ├── model_training_testing.ipynb
+│   └── optimized_eda.ipynb
 │
-├── src/                    # ML pipeline (✅ COMPLETED)
+├── src/                    # ML pipeline ( COMPLETED)
 │   ├── __init__.py
 │   ├── preprocess.py      # Data cleaning & TF-IDF feature extraction
 │   ├── train.py           # Model training (4 algorithms)
 │   ├── predict.py         # Prediction logic with model loading
 │   └── evaluate.py        # Model evaluation & metrics
 │
-├── models/                 # Saved trained models (✅ TRAINED)
+├── models/                 # Saved trained models ( TRAINED)
 │   ├── best_model.pkl           # Random Forest (99.67% accuracy)
 │   ├── all_models.pkl           # All 4 trained models
 │   ├── tfidf_vectorizer.pkl     # TF-IDF feature extractor
@@ -131,11 +136,16 @@ fake-news-detection/
 │       ├── detailed_metrics.csv
 │       └── model_comparison.csv
 │
+├── models1/                # Alternative model storage directory
+│
 ├── app/                    # FastAPI web application (✅ COMPLETED)
 │   ├── __init__.py
-│   ├── main.py            # Clean FastAPI app with template loading
-│   └── templates/         # HTML templates
-│       └── home.html      # Beautiful modern UI with gradient design
+│   └── main.py            # Clean FastAPI app with template loading
+│
+├── docs/                   # Frontend web files
+│   ├── index.html         # Beautiful modern UI with gradient design
+│   ├── style.css          # CSS styling for the web interface
+│   └── script.js          # JavaScript functionality
 │
 ├── config/
 │   ├── __init__.py
@@ -144,8 +154,7 @@ fake-news-detection/
 ├── tests/                  # Unit tests
 │   ├── __init__.py
 │   ├── test_main.py       # FastAPI endpoint tests
-│   ├── test_model.py      # Model functionality tests
-│   └── manual_test.py     # Manual testing scripts
+│   └── test_model.py      # Model functionality tests
 │
 ├── scripts/                # Helper scripts
 │   ├── run.sh             # Application startup script
@@ -154,7 +163,7 @@ fake-news-detection/
 ├── Dockerfile             # Docker containerization
 ├── docker-compose.yml     # Multi-container setup
 ├── requirements.txt       # Python dependencies
-├── Makefile              # Build automation
+├── render.yaml            # Render deployment configuration
 ├── README.md             # Project documentation
 └── .gitignore            # Git ignore rules
 ```
@@ -244,9 +253,14 @@ Trained models and artifacts saved to `models/` directory:
 
 **FastAPI Web Application:**
 - **Beautiful Modern UI** with gradient design and animations
-- **Template Separation** - HTML in `app/templates/home.html`
+- **Frontend Files** - HTML, CSS, JS in `docs/` directory
 - **Clean Code Structure** - No code duplication
 - **Responsive Design** - Works on mobile and desktop
+
+**Frontend Structure:**
+- **HTML Interface**: `docs/index.html` - Main web interface
+- **Styling**: `docs/style.css` - CSS styling
+- **JavaScript**: `docs/script.js` - Interactive functionality
 
 **Local Development:**
 ```bash
@@ -355,7 +369,3 @@ pytest -v
 This project is licensed under **MIT License**.
 
 ---
-
-I can also create a **Markdown table with all scripts and their purpose** for even better clarity in this README if you want.
-
-Do you want me to do that next?
