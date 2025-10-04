@@ -9,6 +9,12 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from src.predict import predict_texts
+from src.train import train_model  # <-- import your training function
+
+MODEL_PATH = "models/best_model.pkl"
+if not os.path.exists(MODEL_PATH):
+    print("Model not found. Training model now...")
+    train_model()
 
 MODELS_LOADED = False
 MODEL_METRICS = {}
