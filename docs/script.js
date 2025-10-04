@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // API Base URL - adjust based on environment
             const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
                 ? 'http://localhost:3000'
-                : 'https://fake-news-detection-system-hh8p.onrender.com';
+                : 'https://fake-news-detection-3olj.onrender.com';
 
             console.log('Making API call to:', `${API_BASE_URL}/predict`);
 
