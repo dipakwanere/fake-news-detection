@@ -4,6 +4,11 @@
 
 This guide provides comprehensive instructions for setting up, running, and deploying the Fake News Detection system - a full stack end-to-end NLP-based ML project with Docker and CI/CD pipeline.
 
+> **📝 Note about Mermaid Diagrams:** To view the Mermaid diagrams in this document properly, you may need to:
+> - Install the "Markdown Preview Mermaid Support" extension in VS Code
+> - Or view this file on GitHub/GitLab which natively supports Mermaid
+> - Or use an online Mermaid viewer like [mermaid.live](https://mermaid.live/)
+
 ---
 
 ## 📋 Table of Contents
@@ -28,8 +33,14 @@ Before starting, ensure you have:
 
 - **Python 3.11+** installed
 - **Git** installed
+- **GitHub Account** (for version control and CI/CD pipeline)
+- **Render Account** (for production deployment)
 - **Docker** (optional, for containerization)
-- **Node.js** (optional, for advanced frontend features)
+
+**Frontend Technologies:**
+- This project uses **HTML, CSS, and JavaScript** for the frontend interface
+- No additional frontend frameworks required (React, Vue, etc.)
+- All frontend files are located in the `docs/` directory
 
 ---
 
@@ -551,17 +562,15 @@ docker run -p 8000:8000 fake-news-detection
 ```mermaid
 graph TB
     A[Application] --> B[Render]
-    A --> C[Heroku]
-    A --> D[AWS ECS]
-    A --> E[Google Cloud Run]
-    A --> F[Azure Container Instances]
+    A --> C[AWS ECS]
+    A --> D[Google Cloud Run]
+    A --> E[Azure Container Instances]
     
     subgraph "Cloud Platforms"
         B
         C
         D
         E
-        F
     end
 ```
 
@@ -588,17 +597,6 @@ graph TB
    git commit -m "Deploy to production"
    git push origin main
    ```
-
-### Deploy to Heroku
-
-```bash
-# Install Heroku CLI
-heroku login
-heroku create fake-news-detection-app
-heroku container:push web
-heroku container:release web
-heroku open
-```
 
 ---
 
