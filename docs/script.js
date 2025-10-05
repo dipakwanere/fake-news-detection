@@ -205,9 +205,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const modelAccuracy = (apiResult.model_accuracy || 0.9966) * 100; // Convert to percentage
 
         let summary;
-        if (isReal && confidence > 0.80) {
+        if (isReal && confidence > 0.75) {
             summary = {
-                verdict: isReal ? 'Highly Credible' : 'High Risk of Misinformation',
+                verdict: isReal ? 'Highly Credible' : 'Highly Credible',
                 color: isReal ? 'var(--success)' : 'var(--danger)',
                 recommendation: isReal ? 'Content appears factual and well-sourced. Safe to share.' : 'Strong indicators of false content. Advised not to share.'
             };
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         } else {
             summary = {
-                verdict: 'High Risk of Misinformation',
+                verdict: 'Uncertain Prediction',
                 color: 'var(--danger)',
                 recommendation: 'Low confidence prediction. Strongly advised to verify from reliable sources.'
             };
