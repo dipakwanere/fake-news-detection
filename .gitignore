@@ -74,6 +74,7 @@ data/processed/
 
 # Model files (trained models can be large)
 models1/
+models/
 *.pkl
 *.joblib
 *.h5
@@ -83,6 +84,8 @@ models1/
 *.bin
 *.safetensors
 
+# BUT allow only the specific best model
+!/models/best_model.pkl
 # Environment variables and secrets
 .env
 .env.local
